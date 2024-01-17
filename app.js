@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function (){
         fetch(`http://localhost:3000/data`)
         .then(response => response.json())
         .then(data => displayMemeList(data))
-        .catch(error => console.error('Error fetching memeDetails:', error));
+        .catch(error => console.error('Error fetching meme Details:', error));
     }
     // Function to display meme list
     function displayMemeList(data) {
@@ -23,6 +23,10 @@ document.addEventListener('DOMContentLoaded', function (){
         <p>Box Count: ${meme['box_count']}</p>
         <p>Captions: ${meme.captions}</p>
     `;
+    // Adding click event listener
+    memeItem.addEventListener('click', function () {
+        fetchMemoDetails(memo.id);
+    });
        memeList.appendChild(memeItem);     
   });
 }
