@@ -1,24 +1,32 @@
 document.addEventListener('DOMContentLoaded', function (){
     const memeContainer = document.getElementById('meme details');
     const memeList = document.getElementById('memes');
-//Function to fetch meme details
-    function fetchMemeDetails(memeId) {
+//Function to fetch all memes
+    function fetchAllMemes( ) {
         fetch(`http://localhost:3000/data`)
-            .then(response => response.json())
-            .then(data => displayMemeDetails(data))
-            .catch(error => console.error('Error fetching meme details:'))
+        .then(response => response.json())
+        .then(data => displayMemeList(data))
+        .catch(error => console.error('Error fetching memeDetails:', error));
     }
-
-// Function to display meme details
-function displayMemeDetails(data) {
-    const memeDetailsHTML =`
-        <h2>${data.name}</h2>
-        <img src="${data.url}" alt="${data.name}" style="max-width:100%;">
-        <p>Dimensions: ${data.width} x ${data.height}</p>
-        <p>Box Count: ${data['box_count']}</p>
-        <p>Captions: ${data.captions}</p>
+    // Function to display meme list
+    function displayMemeList(data) {
+        //access the 'memes' array from the data object
+        const memes = data.memes;
+        memeList.innerHTML='';
+        //iterate through the list of memes and create HTML elements
+        memes.forEach(meme => {
+        const memeItem = document.createElement('div');
+        memeItem.innerHTML =`
+        <h2>${meme.name}</h2>
+        <img src="${meme.url}" alt="${meme.name}" style="max-width:100%;">
+        <p>Dimensions: ${meme.width} x ${meme.height}</p>
+        <p>Box Count: ${meme['box_count']}</p>
+        <p>Captions: ${meme.captions}</p>
     `;
-       memeContainer.innerHTML = memeDetailsHTML      
+       memeList.appendChild(memeItem);     
+  });
 }
-fetchMemeDetails("181913649");
+
+// Fetch all memes
+    fetchAllMemes();
 });
