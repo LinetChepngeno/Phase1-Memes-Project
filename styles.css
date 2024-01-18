@@ -1,0 +1,32 @@
+/* styles.css */
+
+/* Style for meme container */
+#memes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Style for individual meme items */
+.meme-item {
+    max-width: 300px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for delete button */
+.delete {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.delete:hover {
+    background-color: #c82333;
+}
