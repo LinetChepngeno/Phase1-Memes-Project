@@ -3,10 +3,47 @@
     padding:0;
     margin:0;
     box-sizing:border-box;
+    background-color: azure;
 
 }
+h1, p {
+    text-align: center;
+}
+#myForm{
+    width: 400px;
+    margin: 30px auto;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid skyblue;
+}
+#addMemeForm {
+    display: flex;
+    flex-direction: column;
+}
+label {
+    margin-bottom: 8px;
+    font-weight: bold;
+}
 
-#memeContainer {
+input {
+    padding: 5px;
+    margin-bottom: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #ccc;
+}
+
+#meme-Container {
     max-width: 1250px;
 	margin: 0 auto;
     padding-left: 10px;
@@ -14,6 +51,7 @@
 	gap: 40px;
 	grid-template-columns: 370px 370px 370px;
 }
+
 
 /* Style for delete button */
 .delete {
