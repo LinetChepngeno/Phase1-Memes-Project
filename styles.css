@@ -51,6 +51,32 @@ button:hover {
 	gap: 40px;
 	grid-template-columns: 370px 370px 370px;
 }
+#meme-Container #memeCard {
+	border: 2px solid skyblue;
+	width: 400px;
+	margin: 15px;
+	border-radius: 15px;
+	overflow: hidden;
+}
+
+#memeCard img {
+	height: 350px;
+    border-radius: 15px;
+}
+#memeCard .box {
+	padding: 10px;
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.wrapper {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
 
 
 /* Style for delete button */
