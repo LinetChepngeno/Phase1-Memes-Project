@@ -20,14 +20,30 @@ document.addEventListener('DOMContentLoaded', fetchAllMemes);
         //iterate through the list of memes and create HTML elements
         memes.forEach(meme => {
         const memeItem = document.createElement('div');
-        memeItem.id = 'memeContainer'
-        memeItem.innerHTML =`
-        <h2>${meme.name}</h2>
-        <img src="${meme.url}" alt="${meme.name}" style="max-width:100%;">
-        <p>Dimensions: ${meme.width} x ${meme.height}</p>
-        <p>Box Count: ${meme['box_count']}</p>
-        <p>Captions: ${meme.captions}</p>
-    `;
+        memeItem.id = 'memeCard'
+        memeItem.innerHTML =
+    //     `
+    //     <h2>${meme.name}</h2>
+    //     <img src="${meme.url}" alt="${meme.name}" style="max-width:100%;">
+    //     <p>Dimensions: ${meme.width} x ${meme.height}</p>
+    //     <p>Box Count: ${meme['box_count']}</p>
+    //     <p>Captions: ${meme.captions}</p>
+    // `;
+    `<div class="box">
+                <h2 class="name">${meme.name}</h2>
+                <img
+                    src=${meme.url}
+                    alt=${meme.name}
+                />                          
+    
+                <div class="wrapper">
+            
+                <h3>Dimension: ${meme.width} x ${meme.height}</h3>
+                <h3>Box Count: ${meme['box_count']}</h3>
+                <h3>Captions: ${meme.captions}</h3>
+
+                </div>
+            </div> `;
        memeList.appendChild(memeItem);     
   });
 }
