@@ -20,15 +20,9 @@ document.addEventListener('DOMContentLoaded', fetchAllMemes);
         //iterate through the list of memes and create HTML elements
         memes.forEach(meme => {
         const memeItem = document.createElement('div');
-        memeItem.id = 'memeCard'
+        memeItem.className = 'memeCard'
         memeItem.innerHTML =
-    //     `
-    //     <h2>${meme.name}</h2>
-    //     <img src="${meme.url}" alt="${meme.name}" style="max-width:100%;">
-    //     <p>Dimensions: ${meme.width} x ${meme.height}</p>
-    //     <p>Box Count: ${meme['box_count']}</p>
-    //     <p>Captions: ${meme.captions}</p>
-    // `;
+
     `<div class="box">
                 <h2 class="name">${meme.name}</h2>
                 <img
@@ -109,6 +103,8 @@ function displayAdditionalMemes() {
             console.log(memes)
     memes.forEach(meme => {
         const displayJsonMeme = document.createElement('div')
+        
+        displayJsonMeme.className = 'memeCard'
         displayJsonMeme.innerHTML =`
             <h2>${meme.name}</h2>
             <img src="${meme.url}" alt="${meme.name}" style="max-width:100%;">

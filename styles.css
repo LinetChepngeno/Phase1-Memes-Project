@@ -43,7 +43,7 @@ button:hover {
     background-color: #ccc;
 }
 
-#meme-Container {
+#memes {
     max-width: 1250px;
 	margin: 0 auto;
     padding-left: 10px;
@@ -51,7 +51,7 @@ button:hover {
 	gap: 40px;
 	grid-template-columns: 370px 370px 370px;
 }
-#meme-Container #memeCard {
+#memes .memeCard {
 	border: 2px solid skyblue;
 	width: 400px;
 	margin: 15px;
@@ -59,11 +59,11 @@ button:hover {
 	overflow: hidden;
 }
 
-#memeCard img {
+.memeCard img {
 	height: 350px;
     border-radius: 15px;
 }
-#memeCard .box {
+.memeCard .box {
 	padding: 10px;
 	display: flex;
 	justify-content: space-between;
