@@ -106,13 +106,23 @@ function displayAdditionalMemes() {
         
         displayJsonMeme.className = 'memeCard'
         displayJsonMeme.innerHTML =`
-            <h2>${meme.name}</h2>
-            <img src="${meme.url}" alt="${meme.name}" style="max-width:100%;">
-            <p>Dimensions: ${meme.width} x ${meme.height}</p>
-            <p>Box Count: ${meme['box_count']}</p>
-            <p>Captions: ${meme.captions}</p>
-            <button class="delete"> Delete Meme </button>
-    `;
+        <div class="box">
+        <h2 class="name">${meme.name}</h2>
+        <img
+            src=${meme.url}
+            alt=${meme.name}
+        />                          
+
+        <div class="wrapper">
+    
+        <h3>Dimension: ${meme.width} x ${meme.height}</h3>
+        <h3>Box Count: ${meme['box_count']}</h3>
+        <h3>Captions: ${meme.captions}</h3>
+
+        </div>
+        <button class="delete"> Delete Meme </button>
+    </div>`;
+    memeList.appendChild(displayJsonMeme);
 
     //Add Delete meme eventlistener
     const deleteButton = displayJsonMeme.querySelector('.delete');
@@ -134,7 +144,7 @@ function displayAdditionalMemes() {
             .catch(error => console.log(error));
     });
 
-    memeList.appendChild(displayJsonMeme);
+    
 });
 })
 .catch(error => console.log(error));
