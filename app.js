@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', fetchAllMemes);
         //iterate through the list of memes and create HTML elements
         memes.forEach(meme => {
         const memeItem = document.createElement('div');
+        memeItem.id = 'memeContainer'
         memeItem.innerHTML =`
         <h2>${meme.name}</h2>
         <img src="${meme.url}" alt="${meme.name}" style="max-width:100%;">
