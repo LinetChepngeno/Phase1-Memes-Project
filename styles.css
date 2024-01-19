@@ -1,6 +1,10 @@
-/* styles.css */
+ /*Reset styles for the entire document*/
+ *{
+    padding:0;
+    margin:0;
+    box-sizing:border-box;
 
-/* Style for meme container */
+}
 #memes {
     display: flex;
     flex-wrap: wrap;
