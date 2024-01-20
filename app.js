@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', fetchAllMemes);
             captions: captions,
         };
         console.log(newMeme);
-        //create alert once you have added the meme
+        //create alert once you have successfully added the meme
         alert ('Meme added successfully')
     //Send a post request to add the new meme to the server
     fetch('http://localhost:3000/memes', {
